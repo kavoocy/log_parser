@@ -4,7 +4,7 @@ module LogParser
   module ParseHelpers
     class BaseStatsParser
       IP_PATTERN = /\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b/
-      NOT_IMPLEMENTED = "Not Implemented".freeze
+      NOT_IMPLEMENTED = "Not Implemented"
 
       def initialize(log_list:)
         # On initialization, extract the page urls and group them
@@ -42,7 +42,7 @@ module LogParser
       end
 
       # array: each item in the array has two members: page url and ip address
-      def invalid_rows(array = [])
+      def invalid_rows(array=[])
         return true if array.any?(&:blank?)
         return true if array.length != 2
         return true unless array.first.starts_with?("/")

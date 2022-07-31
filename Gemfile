@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "3.1.2"
 
 gem "awesome_print"
-gem 'coveralls', require: false
+gem "coveralls", require: false
 
 gem "pry-rails"
 
