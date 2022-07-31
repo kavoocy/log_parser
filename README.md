@@ -1,4 +1,4 @@
-# Log File Parser *(coding test)*
+# Log File Parser
 
 ## Problem
 
