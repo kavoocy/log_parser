@@ -26,6 +26,7 @@ module LogParser
       print_results
     rescue StandardError => e
       logger.error "An error occurred and the execution halted - error: #{e.class} and message: #{e.message}"
+      nil
     end
 
     private
@@ -45,9 +46,6 @@ module LogParser
       return logger.warn("File is empty") && nil if file_content.blank?
 
       file_content.split("\n").map(&:strip)
-    rescue StandardError => e
-      logger.error "Parse failed - error: #{e.class} and message: #{e.message}"
-      nil
     end
 
     # Required param: :uniq_urls

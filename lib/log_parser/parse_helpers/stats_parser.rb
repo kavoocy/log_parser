@@ -6,7 +6,7 @@ module LogParser
       def parse
         # call the base class to sort
         # before sorting, it should consolidate similar page urls
-        sort_by_value(hash_array: consolidated_page_urls)
+        sort_by_value(hash_list: consolidated_page_urls)
       end
 
       private
