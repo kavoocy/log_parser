@@ -1,6 +1,6 @@
 # Log File Parser *(coding test)*
 
-## Problem:
+## Problem
 
 1. A script that receives a log as argument (eg. `webserver.log`)
 2. Returns the following:
@@ -9,13 +9,15 @@
 
 
 
-## Solution:
+## Solution
 
 Run this in your terminal:
 
 ```
 ./parser.rb FILE_PATH
 ```
+
+> *Note: Make sure that you have the right permission to run the ruby script on the give file*
 
 **Output would look like:**
 ```
