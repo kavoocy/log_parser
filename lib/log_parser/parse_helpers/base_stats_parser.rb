@@ -36,7 +36,7 @@ module LogParser
           &.map(&:split)
           &.reject(&method(:invalid_rows))
           &.map(&:first)
-  
+
         # after extraction, group them
         @groupped_page_urls = group_and_aggregate_unique_visits(page_urls:)
       end

@@ -32,6 +32,13 @@ Metrics/BlockLength:
   Exclude:
     - "*.gemspec"
     - "Rakefile"
+    - "spec/**/*.rb"
+
+Layout/LineLength:
+  Exclude:
+    - "*.gemspec"
+    - "Rakefile"
+    - "spec/**/*.rb"
 
 Metrics/ClassLength:
   Exclude:

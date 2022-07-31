@@ -7,7 +7,9 @@ describe LogParser::ParseHelpers::BaseStatsParser do
 
     context "throws AbstractMethodError error" do
       it do
-        expect { subject.parse }.to raise_error(AbstractMethodError, LogParser::ParseHelpers::BaseStatsParser::NOT_IMPLEMENTED)
+        expect do
+          subject.parse
+        end.to raise_error(AbstractMethodError, LogParser::ParseHelpers::BaseStatsParser::NOT_IMPLEMENTED)
       end
     end
   end
@@ -23,7 +25,6 @@ describe LogParser::ParseHelpers::BaseStatsParser do
         expect(subject.send(:sort_by_value, hash_list:)).to eq(expected_array)
       end
     end
-
   end
 
   describe "#prepare_groupped_page_urls" do
@@ -31,7 +32,7 @@ describe LogParser::ParseHelpers::BaseStatsParser do
       let(:log_list)          { correct_log_list_given }
       let(:log_list_expected) { correct_log_list_expected }
       let(:subject)           { LogParser::ParseHelpers::BaseStatsParser.new(log_list:) }
-  
+
       it "properly sorts - no row is omitted" do
         expect(subject.send(:prepare_groupped_page_urls, log_list:)).to eq(log_list_expected)
       end
@@ -41,11 +42,10 @@ describe LogParser::ParseHelpers::BaseStatsParser do
       let(:log_list)          { log_list_with_bad_rows_given }
       let(:log_list_expected) { omitted_log_list_expected }
       let(:subject)           { LogParser::ParseHelpers::BaseStatsParser.new(log_list:) }
-  
+
       it "properly sorts - some rows are omitted" do
         expect(subject.send(:prepare_groupped_page_urls, log_list:)).to eq(log_list_expected)
       end
     end
-
   end
 end

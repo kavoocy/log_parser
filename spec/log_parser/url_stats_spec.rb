@@ -9,8 +9,7 @@ describe LogParser::UrlStats do
       let(:file_path) { "bad/path" }
       it "throws error message and returns nil" do
         expect(subject.run(file_path:)).to eq(nil)
-        # rubocop:disable Layout/LineLength
-        expect { subject.run(file_path:) }.to output(/ERROR -- : An error occurred and the execution halted - error: Errno::ENOENT and message: No such file or directory @ rb_sysopen - bad\/path/).to_stdout
+        expect { subject.run(file_path:) }.to output(%r{ERROR -- : An error occurred and the execution halted - error: Errno::ENOENT and message: No such file or directory @ rb_sysopen - bad/path}).to_stdout
       end
     end
 

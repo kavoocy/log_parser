@@ -89,7 +89,6 @@ module HelperExpectations
     ]
   end
 
-
   def correct_log_list_expected_non_unique
     {
       "/about" => 4,
