@@ -39,3 +39,10 @@ Run this in your terminal:
     }
 }
 ```
+
+## Tests:
+To run the tests, simply run:
+
+```
+rspec
+```
