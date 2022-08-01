@@ -45,7 +45,7 @@ module LogParser
       def invalid_rows(array=[])
         return true if array.any?(&:blank?)
         return true if array.length != 2
-        return true unless array.first.starts_with?("/")
+        return true unless array.first.start_with?("/")
         return true if IP_PATTERN.match(array.second).nil?
 
         false

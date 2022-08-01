@@ -1,5 +1,8 @@
 class Object
   def blank?
-    nil? || empty?
+    return true if respond_to?(:nil?) && nil?
+    return true if respond_to?(:empty?) && empty?
+
+    false
   end
 end
